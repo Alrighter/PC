@@ -39,7 +39,7 @@ namespace PC.ViewModel
                            using (ApplicationContext db = new ApplicationContext())
                            {
                                db.Information.Load();
-                               db.Information.Add(new Medicine(Medicine.Name, 2, Medicine.Start_Date, "1231,1323,2"));
+                               db.Information.Add(new Medicine(Medicine.Name, 2, Medicine.Start_Date, Medicine.End_Date));
                                db.SaveChanges();
                            }
 
