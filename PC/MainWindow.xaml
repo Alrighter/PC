@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:wpf="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="454" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.1"></ColumnDefinition>
@@ -15,7 +15,7 @@
         </Grid.ColumnDefinitions>
 
 
-        <StackPanel Width="300" Grid.Column="1" Margin="247,-2,246.6,2">
+        <StackPanel Width="350" Grid.Column="1">
 
             <TextBox
                 x:Name="NameTextBox"
@@ -28,25 +28,43 @@
                     </Binding>
                 </TextBox.Text>
             </TextBox>
-           
-            <DockPanel>
+
+            <DockPanel Height="100">
                 <DatePicker
+                    DockPanel.Dock="Left"
+                    wpf:HintAssist.HelperText="         Start date"
                     SelectedDate="{Binding Medicine.Start_Date}"
                     Width="100"
                 materialDesign:HintAssist.Hint="Pick Date"
                 Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
-            <DatePicker
+                <DatePicker
+                wpf:HintAssist.HelperText="         End date"
+                DockPanel.Dock="Right"
                 SelectedDate="{Binding Medicine.End_Date}"
                 Width="100"
                 wpf:HintAssist.Hint="Pick Date"
                 Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
             </DockPanel>
+            <ComboBox Grid.Column="1" Width="100"
+                      materialDesign:ComboBoxAssist.ClassicMode="{Binding Medicine.Frequency }"
+                      materialDesign:HintAssist.Hint="Frequency">
+                <ComboBoxItem>
+                    1
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    2
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    3
+                </ComboBoxItem>
+            </ComboBox>
         </StackPanel>
         <Button Grid.Column="1"
+                DockPanel.Dock="Bottom"
                 Command="{Binding AddCommand}"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Width="100"
-            ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Margin="347,319,346.6,69">
+                Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                Width="100"
+                ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Margin="347,321,346.6,71.8">
             _DARK
         </Button>
     </Grid>
