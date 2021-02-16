@@ -23,23 +23,15 @@ namespace PC.ViewModel
         {
             get
             {
-                return _addCommand??
+                return _addCommand ??
                        (_addCommand = new RelayCommand(obj =>
                        {
-
-                           //SQLiteConnection db = new SQLiteConnection("Data Source =.\\database.db; Version = 3; New = True; Compress = True;");
-                           //db.Open();
-                           //    SQLiteCommand command =
-                           //        new SQLiteCommand(
-                           //            "INSERT INTO Information (NAME, START_DATE, END_DATE, FREQUENCY) VALUES('asdasd', 'startdate', 'enddate', 3);",
-                           //            db);
-                           //    command.ExecuteNonQuery();
-
 
                            using (ApplicationContext db = new ApplicationContext())
                            {
                                db.Information.Load();
-                               db.Information.Add(new Medicine(Medicine.Name, Medicine.Frequency, Medicine.Start_Date, Medicine.End_Date));
+                               db.Information.Add(new Medicine(Medicine.Name, Medicine.Frequency, Medicine.Start_Date,
+                                   Medicine.End_Date));
                                db.SaveChanges();
                            }
 

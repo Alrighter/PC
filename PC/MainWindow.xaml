@@ -20,7 +20,7 @@
             <TextBox
                 x:Name="NameTextBox"
                 wpf:HintAssist.Hint="Name"
-                wpf:HintAssist.HelperText="Helper text longer than error">
+                wpf:HintAssist.HelperText="Helper text longer than error" Margin="0,0,0.4,0">
                 <TextBox.Text>
                     <Binding
                         Path="Medicine.Name"
@@ -29,7 +29,7 @@
                 </TextBox.Text>
             </TextBox>
 
-            <DockPanel Height="100">
+            <DockPanel Height="100" Margin="0,0,0.4,0">
                 <DatePicker
                     DockPanel.Dock="Left"
                     wpf:HintAssist.HelperText="         Start date"
@@ -47,7 +47,7 @@
             </DockPanel>
             <ComboBox Grid.Column="1" Width="100"
                       materialDesign:ComboBoxAssist.ClassicMode="{Binding Medicine.Frequency }"
-                      materialDesign:HintAssist.Hint="Frequency">
+                      materialDesign:HintAssist.Hint="Frequency" Margin="125,0,125.4,0">
                 <ComboBoxItem>
                     1
                 </ComboBoxItem>
@@ -64,7 +64,7 @@
                 Command="{Binding AddCommand}"
                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
                 Width="100"
-                ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Margin="347,321,346.6,71.8">
+                ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Margin="347,322,346.6,70.8">
             _DARK
         </Button>
     </Grid>
